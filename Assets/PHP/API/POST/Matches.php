@@ -1,6 +1,6 @@
 <?php
 include "../Config/Config.php";
-$TournamentName = $_POST['TournamentName'] ?? '';
+$TournamentName = addslashes($_POST['TournamentName'] ?? '');
 $CountryA = $_POST['CountryA'] ?? '';
 $CountryB = $_POST['CountryB'] ?? '';
 $Schedule = $_POST['Schedule'] ?? '';

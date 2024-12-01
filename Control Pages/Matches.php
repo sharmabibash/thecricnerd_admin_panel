@@ -2,7 +2,8 @@
 session_start(); // Start the session at the very beginning
 ob_start(); // Start output buffering
 
-$base_url = $_SERVER['DOCUMENT_ROOT'] . "/";
+// $base_url = $_SERVER['DOCUMENT_ROOT'] . "/";
+$base_url = $_SERVER['DOCUMENT_ROOT'] . "/The Cricket Nerd Admin/";
 include $base_url . 'Assets/Components/Navbar.php';
 include $base_url . 'Assets/PHP/API/Config/Config.php';
 

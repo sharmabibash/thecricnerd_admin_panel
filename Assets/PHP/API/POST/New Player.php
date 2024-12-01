@@ -1,12 +1,13 @@
 <?php
 include "../Config/Config.php";
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    $PlayerName = $_POST['PlayerName'] ?? '';
-    $SlugUrl = CreateSlug($PlayerName);
-    $PlayerRole = $_POST['PlayerRole'] ?? '';
-    $PlayerType = $_POST['PlayerType'] ?? '';
-    $BattingStyle = $_POST['BattingStyle'] ?? '';
-    $BowlingStyle = $_POST['BowlingStyle'] ?? '';
+$PlayerName = addslashes($_POST['PlayerName'] ?? '');
+$SlugUrl = CreateSlug($PlayerName);
+$PlayerRole = addslashes($_POST['PlayerRole'] ?? '');
+$PlayerType = addslashes($_POST['PlayerType'] ?? '');
+$BattingStyle = addslashes($_POST['BattingStyle'] ?? '');
+$BowlingStyle = addslashes($_POST['BowlingStyle'] ?? '');
+
     $requiredFields = [
         'PlayerName', 'PlayerRole', 'PlayerType', 'BattingStyle', 'BowlingStyle'
     ];

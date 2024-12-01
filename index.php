@@ -68,6 +68,20 @@ include 'Assets/Components/Navbar.php';
                     </a>
                 </div>
             </section>
+            <section class="control bg-white p-5 rounded-lg shadow-md">
+                <h2 class="text-2xl mb-2 text-center border-b-2 pb-2 text-gray-800">
+                    <i class="fas fa-futbol mr-2"></i> NPL 2024
+                </h2>
+                <div class="control-buttons mb-4 text-center flex flex-col justify-center items-center">
+                    <a href="Pages/npl.php" class="btn bg-blue-500 text-white px-4 py-2 mx-2 rounded hover:bg-blue-700 mt-1">
+                        Add Player Only
+                    </a>
+                <div class="control-buttons mb-4 text-center flex flex-col justify-center items-center">
+                    <a href="Control Pages/npl_player.php" class="btn bg-blue-500 text-white px-4 py-2 mx-2 rounded hover:bg-blue-700 mt-1">
+                        View & Insert Player Data
+                    </a>
+                </div>
+            </section>
         </main>
     </div>
 </body>

@@ -1,8 +1,9 @@
 <?php
 include "../Config/Config.php";
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    $CountryName = $_POST['CountryName'] ?? '';
-    $CountryCode = $_POST['CountryCode'] ?? '';
+$CountryName = addslashes($_POST['CountryName'] ?? '');
+$CountryCode = addslashes($_POST['CountryCode'] ?? '');
+
 
     if (isset($_FILES['Image']) && $_FILES['Image']['error'] === UPLOAD_ERR_OK) {
         $fileTmpPath = $_FILES['Image']['tmp_name'];

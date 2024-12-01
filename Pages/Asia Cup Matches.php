@@ -1,12 +1,14 @@
 <?php
-$base_url = $_SERVER['DOCUMENT_ROOT'] . "/";
+// $base_url = $_SERVER['DOCUMENT_ROOT'] . "/";
+$base_url = $_SERVER['DOCUMENT_ROOT'] . "/The Cricket Nerd Admin/";
 include $base_url . 'Assets/Components/Navbar.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <base href="/">
+    <!-- <base href="/"> -->
+    <base href="/The Cricket Nerd Admin/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin | Upload Asia Cup Matches Matches</title>

@@ -1,13 +1,9 @@
 <?php
-// Enable error reporting for debugging
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
 include "../Config/Config.php";
 
-$VideoTitle = $_POST['VideoTitle'] ?? '';
-$Description = $_POST['Description'] ?? '';
+$VideoTitle = addslashes($_POST['VideoTitle'] ?? '');
+$Description = addslashes($_POST['Description'] ?? '');
 $Link = $_POST['Link'] ?? '';
 
 if (isset($_FILES['Image']) && $_FILES['Image']['error'] === UPLOAD_ERR_OK) {
