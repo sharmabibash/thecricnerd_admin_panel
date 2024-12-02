@@ -5,24 +5,28 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         const formData = new FormData(form);
+        const playerRole = formData.get('PlayerRole');
+        if (!playerRole) {
+            showToast('Please select a player role.', 'error');
+            return;
+        }
 
         fetch(apiUrl, {
             method: 'POST',
             body: formData,
         })
-            .then((response) => response.text())
-            .then((response) => {
-                console.log(response);
-                if (response.trim() === "Player record inserted successfully.") {
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.success) {
                     form.reset();
-                    showToast('Player profile successfully uploaded', 'success');
+                    showToast(data.message || 'Player profile successfully uploaded', 'success');
                 } else {
-                    showToast('Failed to upload player profile', 'error');
+                    showToast(data.message || 'Failed to upload player profile', 'error');
                 }
             })
             .catch((error) => {
                 console.error('Error:', error);
-                showToast('Unexpected error occurred', 'error');
+                showToast('Unexpected error occurred. Please try again later.', 'error');
             });
     });
 

@@ -18,6 +18,14 @@ include $base_url . 'Assets/Components/Navbar.php';
     <div class="max-w-4xl mx-auto my-24 bg-white p-5 rounded-lg shadow-lg transition-transform transform">
         <form id="nplForm">
             <h1 class="mb-6 text-2xl text-center text-teal-800">Upload NPL Player Profile</h1>
+            <div class="mb-4">
+                <label for="PlayerRole" class="block text-[13px] mb-[1px] font-semibold text-green-900">Player Configuration</label>
+                <select id="PlayerRole" name="PlayerRole" class="w-full p-3 border border-teal-200 rounded-md bg-green-50 transition duration-300 focus:border-teal-800 outline-none" required>
+                    <option value="">Upload Stats For</option>
+                    <option value="Batsman">Batsman</option>
+                    <option value="Bowler">Bowler</option>
+                </select>
+            </div>
             <div class="mb-5">
                 <label class="block mb-2 font-bold text-teal-900" for="playerName">Player Name</label>
                 <input class="w-full p-3 border border-teal-200 rounded-lg bg-green-50 focus:border-teal-800 focus:outline-none" type="text" id="playerName" name="PlayerName" required/>

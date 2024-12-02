@@ -1,14 +1,18 @@
-
 <?php
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
+header('Access-Control-Allow-Headers: Content-Type');
+
 include "../Config/Config.php";
 if ($_SERVER['REQUEST_METHOD'] == "GET") {
     $response = [];
-    if (isset($_GET["GetNPL"])) {
-        $query = "SELECT * FROM `npl` ORDER BY ID DESC";
+    if (isset($_GET["GetNPLBowler"])) { 
+        $query = "SELECT * FROM `npl_stats_bowling` ORDER BY ID DESC";
         $queryRun = mysqli_query($conn, $query);
         if ($queryRun) {
             while ($row = $queryRun->fetch_assoc()) {
                 $response[] = $row;
+                
             }
             echo json_encode($response);
         } else {
@@ -16,3 +20,4 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
         }
     }
 }
+?>

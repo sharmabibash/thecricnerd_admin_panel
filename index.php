@@ -77,8 +77,13 @@ include 'Assets/Components/Navbar.php';
                         Add Player Only
                     </a>
                 <div class="control-buttons mb-4 text-center flex flex-col justify-center items-center">
-                    <a href="Control Pages/npl_player.php" class="btn bg-blue-500 text-white px-4 py-2 mx-2 rounded hover:bg-blue-700 mt-1">
-                        View & Insert Player Data
+                    <a href="Control Pages/npl_player_batter.php" class="btn bg-blue-500 text-white px-4 py-2 mx-2 rounded hover:bg-blue-700 mt-1">
+                        View & Insert Batting
+                    </a>
+                
+                <div class="control-buttons mb-4 text-center flex flex-col justify-center items-center">
+                    <a href="Control Pages/npl_player_bowler.php" class="btn bg-blue-500 text-white px-4 py-2 mx-2 rounded hover:bg-blue-700 mt-1">
+                        View & Insert Bowling
                     </a>
                 </div>
             </section>

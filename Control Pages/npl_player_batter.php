@@ -5,7 +5,7 @@ include $base_url . 'Assets/PHP/API/Config/Config.php';
 @session_start();
 
 $data = [];
-$query = "SELECT * FROM `npl_stats`"; 
+$query = "SELECT * FROM `npl_stats_batting`"; 
 $result = mysqli_query($conn, $query);
 
 if ($result) {
@@ -18,27 +18,27 @@ if ($result) {
 }
 
 if (isset($_GET['delete_id'])) {
-    $delete_id = $_GET['delete_id'];
-    $delete_query = "DELETE FROM `npl_stats` WHERE `id` = $delete_id";
+    $delete_id = intval($_GET['delete_id']); // Ensures the ID is an integer
+    $delete_query = "DELETE FROM `npl_stats_batting` WHERE `ID` = $delete_id";
+
     if (mysqli_query($conn, $delete_query)) {
-        echo "<script>alert('Player deleted successfully'); window.location.href = 'current_page.php';</script>"; // Refresh page after delete
+        echo "<script>alert('Player deleted successfully'); window.location.href = 'current_page.php';</script>";
     } else {
+        error_log("Delete Query Error: " . mysqli_error($conn)); // Log the error
         echo "<script>alert('Error deleting player');</script>";
     }
 }
 
+
 if (isset($_POST['update_id'])) {
     $update_id = $_POST['update_id'];
-    $new_player_name = mysqli_real_escape_string($conn, $_POST['PlayerName']);
     $run_scored = mysqli_real_escape_string($conn, $_POST['RunScored']);
     $total_match = mysqli_real_escape_string($conn, $_POST['TotalMatch']);
-    $wickets_taken = mysqli_real_escape_string($conn, $_POST['WicketsTaken']);
-    $bowling_economy = mysqli_real_escape_string($conn, $_POST['BowlingEconomy']);
     $batting_average = mysqli_real_escape_string($conn, $_POST['BattingAverage']);
 
-    $update_query = "UPDATE `npl_stats` SET `Run Scored` = '$run_scored', `Total Match` = '$total_match', `Wickets Taken` = '$wickets_taken', `Bowling Economy` = '$bowling_economy', `Batting Average` = '$batting_average' WHERE `id` = $update_id";
+    $update_query = "UPDATE `npl_stats_batting` SET `Run Scored` = '$run_scored', `Total Match` = '$total_match', `Batting Average` = '$batting_average' WHERE `id` = $update_id";
     if (mysqli_query($conn, $update_query)) {
-        echo "<script>alert('Player updated successfully'); window.location.href = 'current_page.php';</script>"; // Refresh page after update
+        echo "<script>alert('Player updated successfully'); window.location.href = 'current_page.php';</script>";
     } else {
         echo "<script>alert('Error updating player');</script>";
     }
@@ -122,8 +122,6 @@ if (isset($_POST['update_id'])) {
             background-color: #d02c56;
             transform: scale(1.05);
         }
-
-        /* Modal Overlay */
         #updateModal {
     display: none;
     margin: 40px;
@@ -255,7 +253,7 @@ if (isset($_POST['update_id'])) {
                     
                     echo "<div class='action-buttons'>";
                     echo "<button onclick='updatePlayer($player_id)' class='btn btn-update'>Update</button>";
-                    echo "<button onclick='deletePlayer($player_id)' class='btn btn-delete'>Delete</button>";
+                    
                     echo "</div>";
                     echo "</div>";
                 }
@@ -273,28 +271,16 @@ if (isset($_POST['update_id'])) {
                 <form id="updateForm" method="POST">
                     <input type="hidden" name="update_id" id="update_id">
                     <div class="form-group">
-                        <label for="PlayerName">Player Name</label>
-                        <input type="text" id="PlayerName" name="PlayerName" required>
-                    </div>
-                    <div class="form-group">
                         <label for="RunScored">Run Scored</label>
-                        <input type="number" id="RunScored" name="RunScored" required>
+                        <input type="number" id="RunScored" name="RunScored" >
                     </div>
                     <div class="form-group">
                         <label for="TotalMatch">Total Match</label>
-                        <input type="number" id="TotalMatch" name="TotalMatch" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="WicketsTaken">Wickets Taken</label>
-                        <input type="number" id="WicketsTaken" name="WicketsTaken" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="BowlingEconomy">Bowling Economy</label>
-                        <input type="number" id="BowlingEconomy" name="BowlingEconomy" required>
+                        <input type="number" id="TotalMatch" name="TotalMatch" >
                     </div>
                     <div class="form-group">
                         <label for="BattingAverage">Batting Average</label>
-                        <input type="number" id="BattingAverage" name="BattingAverage" required>
+                        <input type="text" id="BattingAverage" name="BattingAverage" >
                     </div>
                     <div class="form-buttons">
                         <button type="submit" class="btn btn-update">Update</button>
@@ -317,10 +303,13 @@ if (isset($_POST['update_id'])) {
         }
 
         function deletePlayer(playerId) {
-            if (confirm("Are you sure you want to delete this player?")) {
-                window.location.href = `?delete_id=${playerId}`;
-            }
-        }
+    if (confirm("Are you sure you want to delete this player?")) {
+        console.log(playerId); // Debugging: Ensure the correct ID is passed
+        window.location.href = `?delete_id=${playerId}`;
+    }
+}
+
+        
     </script>
 </body>
 </html>
