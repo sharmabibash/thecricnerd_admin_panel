@@ -36,4 +36,14 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         echo json_encode($Array);
     }
 
+    if (isset($_GET['FetchNewsCategory'])) {
+        $Slug=$_GET["Slug"];
+        $NewsQuery = "SELECT * FROM `news` WHERE `News Type Slug` LIKE '%$Slug%'";
+        $NewsQueryRun = mysqli_query($conn, $NewsQuery);
+        while ($Row = $NewsQueryRun->fetch_assoc()) {
+            $Array[] = $Row;
+        }
+        echo json_encode($Array);
+    }
+
 }

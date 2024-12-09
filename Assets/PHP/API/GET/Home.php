@@ -15,13 +15,20 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
         }
     }
     if (isset($_GET['LatestNews'])) {
-        $NewsQuery = "SELECT * FROM `news` ORDER BY `ID` DESC LIMIT 4";
-        $NewsQueryRun = mysqli_query($conn, $NewsQuery);
-        while ($Row = $NewsQueryRun->fetch_assoc()) {
-            $Array[] = $Row;
+        $categories = ['Nepal Premier League', 'Nepal National', 'Nepal Domestic', 'Editorial'];
+        $newsData = [];
+    
+        foreach ($categories as $category) {
+            $NewsQuery = "SELECT * FROM `news` WHERE `News Type` = '$category' ORDER BY `ID` DESC LIMIT 4";
+            $NewsQueryRun = mysqli_query($conn, $NewsQuery);
+            
+            while ($Row = $NewsQueryRun->fetch_assoc()) {
+                $newsData[$category][] = $Row;
+            }
         }
-        echo json_encode($Array);
+        echo json_encode($newsData);
     }
+    
     if (isset($_GET["GetYTVideo"])) {
         $VideoQuery = "SELECT * FROM `videos`";
         $VideoQueryRun = mysqli_query($conn, $VideoQuery);
