@@ -29,6 +29,20 @@ include 'Assets/Components/Navbar.php';
             </section>
             <section class="control bg-white p-5 rounded-lg shadow-md">
                 <h2 class="text-2xl mb-2 text-center border-b-2 pb-2 text-gray-800">
+                    <i class="fas fa-futbol mr-2"></i> Cricket Points Table
+                </h2>
+                <div class="control-buttons mb-4 text-center flex flex-col justify-center items-center">
+                <a href="Pages/npl_points.php" class="btn bg-blue-500 text-white px-4 py-2 mx-2 rounded hover:bg-blue-700 mt-1">
+                        Add Team
+                    </a>
+                <a href="Control Pages/npl_points.php" class="btn bg-blue-500 text-white px-4 py-2 mx-2 rounded hover:bg-blue-700 mt-1">
+                    View And Edit
+                    </a>
+                    
+                </div>
+            </section>
+            <section class="control bg-white p-5 rounded-lg shadow-md">
+                <h2 class="text-2xl mb-2 text-center border-b-2 pb-2 text-gray-800">
                     <i class="fas fa-futbol mr-2"></i> Videos Control
                 </h2>
                 <div class="control-buttons mb-4 text-center flex flex-col justify-center items-center">
