@@ -6,7 +6,7 @@ include $base_url . 'Assets/PHP/API/Config/Config.php';
 @session_start();
 
 $data = [];
-$query = "SELECT * FROM `npl_points_table`"; 
+$query = "SELECT * FROM `npl_points_table`";
 $result = mysqli_query($conn, $query);
 
 if ($result) {

@@ -15,6 +15,8 @@ $base_url = $_SERVER['DOCUMENT_ROOT'] . "/The Cricket Nerd Admin/";
     <link rel="stylesheet" href="Assets/CSS/Navbar.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="Assets/CSS/butterup.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -35,36 +37,12 @@ $base_url = $_SERVER['DOCUMENT_ROOT'] . "/The Cricket Nerd Admin/";
                 <div class="first-side-bar-box">
                     <ul class="side-bar">
                         <li><a href="/">
-                                <i class='bx bxs-grid-alt'></i>
+                        <i class="fa-solid fa-house fa-bounce fa-sm" style="color: #200a8f;"></i>
                                 <p>Dashboard</p>
                             </a></li>
-                        <li><a href="Pages/News.php">
-                                <i class='bx bx-package'></i>
-                                <p>News</p>
-                            </a></li>
-
-                        <li><a href="Pages/Matches.php">
-                                <i class='bx bx-package'></i>
-                                <p>Matches</p>
-                            </a></li>
-                             <li><a href="Pages/Asia Cup Matches.php">
-                                <i class='bx bx-package'></i>
-                                <p>Asia Cup Matches</p>
-                            </a></li>
-                        <li><a href="Pages/Videos.php">
-                        <i class='bx bx-package'></i>
-                                <p>Videos</p>
-                            </a></li>
-                        <li><a href="Pages/Statistics.php">
-                        <i class='bx bx-package'></i>
-                                <p>Statistics</p>
-                            </a></li>
-                        <li><a href="Pages/New Country.php">
-                        <i class='bx bx-package'></i>
-                                <p>New Country</p>
-                            </a></li>
+                        
                         <li><a href="Assets/Components/Logout.php">
-                                <i class='bx bx-log-in'></i>
+                        <i class="fa-solid fa-right-from-bracket fa-bounce fa-sm" style="color: #cf0202;"></i>
                                 <p>Logout</p>
                             </a></li>
                     </ul>
