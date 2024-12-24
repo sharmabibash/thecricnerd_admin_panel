@@ -1,11 +1,16 @@
 <?php
-session_start();
+
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+
 if (!isset($_SESSION['Logged In'])) {
     echo "<script>window.location.href='Assets/Components/Login.html'</script>";
 }
-// $base_url = $_SERVER['DOCUMENT_ROOT'] . "/";
 $base_url = $_SERVER['DOCUMENT_ROOT'] . "/The Cricket Nerd Admin/";
 ?>
+
 
 <head>
     <base href="/The CRicket Nerd Admin/">
