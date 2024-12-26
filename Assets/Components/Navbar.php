@@ -1,19 +1,15 @@
 <?php
-
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-
-
+session_start();
 if (!isset($_SESSION['Logged In'])) {
     echo "<script>window.location.href='Assets/Components/Login.html'</script>";
 }
+//$base_url = $_SERVER['DOCUMENT_ROOT'] . "/";
 $base_url = $_SERVER['DOCUMENT_ROOT'] . "/The Cricket Nerd Admin/";
 ?>
 
-
 <head>
-    <base href="/The CRicket Nerd Admin/">
+    <base href="/The Cricket Nerd Admin/">
+    <!-- <base href="/"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="Media/Logo/The Cricket Nerd.png" type="image/x-icon">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>

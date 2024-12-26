@@ -14,26 +14,12 @@ include 'Assets/Components/Navbar.php';
 </head>
 
 <body class="bg-gray-100" style="background-image: url('Media/Logo/bg-cn.jpg'); background-size: cover; background-position: center;">
+
+
+
     <div class="mt-[100px]">
         <h1 class="text-center mb-8 w-full text-3xl font-extrabold text-white">The Cricket Nerd | Sports Dashboard</h1>
         <main class="container mx-auto px-5 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-4 mb-8">
-
-        <section class="control bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                <h2 class="text-2xl mb-4 text-center border-b-2 pb-2 text-blue-700 font-semibold">
-                <i class="fa-solid fa-book fa-bounce fa-xl" style="color: #190481;"></i> Live Quiz Panel
-                </h2>
-                <div class="control-buttons text-center flex flex-col space-y-3">
-                    <a href="Pages/quiz_questions.php" class="btn bg-black text-white px-5 py-2 rounded-full hover:bg-[#2e3192]">
-                        Add Questions
-                    </a>
-                    <a href="#" class="btn bg-black text-white px-5 py-2 rounded-full hover:bg-[#2e3192]">
-                        View Questions
-                    </a>
-                </div>
-            </section>
-
-
-
             <section class="control bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
                 <h2 class="text-2xl mb-4 text-center border-b-2 pb-2 text-blue-700 font-semibold">
                 <i class="fa-brands fa-codepen fa-bounce fa-xl" style="color: #a60754;"></i> Matches Control
@@ -101,7 +87,7 @@ include 'Assets/Components/Navbar.php';
             </section>
             <section class="control bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
                 <h2 class="text-2xl mb-4 text-center border-b-2 pb-2 text-blue-700 font-semibold">
-                <i class="fa-solid fa-trophy fa-bounce fa-xl" style="color: #c40303;"></i> NPL 2024
+                <i class="fa-solid fa-trophy fa-bounce fa-xl" style="color: #c40303;"></i> Tournament Panel
                 </h2>
                 <div class="control-buttons text-center flex flex-col space-y-3">
                     <a href="Pages/npl.php" class="btn bg-black text-white px-5 py-2 rounded-full hover:bg-[#2e3192]">

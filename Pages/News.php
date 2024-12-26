@@ -1,6 +1,5 @@
 <?php
-// $base_url = $_SERVER['DOCUMENT_ROOT'] . "/";
-$base_url = $_SERVER['DOCUMENT_ROOT'] . "/The Cricket Nerd Admin/";
+$base_url = $_SERVER['DOCUMENT_ROOT'] . "/";
 include $base_url . 'Assets/Components/Navbar.php';
 ?>
 
@@ -34,6 +33,7 @@ include $base_url . 'Assets/Components/Navbar.php';
                     <option value="Nepal National">Nepal National</option>
                     <option value="Nepal Domestic">Nepal Domestic</option>
                     <option value="Editorial">Editorial</option>
+                    <option value="Elite Cup (Jay Trophy)">Elite Cup (Jay Trophy)</option>
                 </select>
             </div>
 

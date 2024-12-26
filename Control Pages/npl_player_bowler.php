@@ -1,6 +1,5 @@
 <?php 
-// $base_url = $_SERVER['DOCUMENT_ROOT'] . "/";
-$base_url = $_SERVER['DOCUMENT_ROOT'] . "/The Cricket Nerd Admin/";
+$base_url = $_SERVER['DOCUMENT_ROOT'] . "/";
 include $base_url . 'Assets/Components/Navbar.php';
 include $base_url . 'Assets/PHP/API/Config/Config.php';
 @session_start();
@@ -43,7 +42,7 @@ if (isset($_POST['update_id'])) {
     if (mysqli_query($conn, $update_query)) {
         echo "<script>
             alert('Player updated successfully');
-            window.location.href = 'current_page.php';
+            window.location.href = 'https://admin.thecricnerd.com/Control%20Pages/npl_player_bowler.php';
         </script>";
     } else {
         echo "<script>

@@ -7,7 +7,7 @@ include "../Config/Config.php";
 if ($_SERVER['REQUEST_METHOD'] == "GET") {
     $response = [];
     if (isset($_GET["GetNPLBowler"])) { 
-        $query = "SELECT * FROM `npl_stats_bowling` ORDER BY ID DESC";
+        $query = "SELECT * FROM `npl_stats_bowling` ORDER BY Economy ASC";
         $queryRun = mysqli_query($conn, $query);
         if ($queryRun) {
             while ($row = $queryRun->fetch_assoc()) {

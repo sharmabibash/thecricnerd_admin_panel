@@ -1,6 +1,6 @@
 <?php 
-// $base_url = $_SERVER['DOCUMENT_ROOT'] . "/"; 
-$base_url = $_SERVER['DOCUMENT_ROOT'] . "/The Cricket Nerd Admin/";
+$base_url = $_SERVER['DOCUMENT_ROOT'] . "/"; 
+// $base_url = $_SERVER['DOCUMENT_ROOT'] . "/The Cricket Nerd Admin/";
 include $base_url . 'Assets/Components/Navbar.php';
 include $base_url . 'Assets/PHP/API/Config/Config.php';
 @session_start();
@@ -49,7 +49,7 @@ if (isset($_POST['update_id'])) {
         WHERE `id` = ?");
     $stmt->bind_param("iiiiisi", $Match_played, $Wins, $Lost, $No_result, $Points, $Net_run_rate, $update_id);
     if ($stmt->execute()) {
-        echo "<script>alert('Table updated successfully'); window.location.href = 'npl_points.php';</script>";
+        echo "<script>alert('Table updated successfully'); window.location.href = 'https://admin.thecricnerd.com/Control%20Pages/npl_points.php';</script>";
     } else {
         echo "<script>alert('Error updating player: " . $stmt->error . "');</script>";
     }

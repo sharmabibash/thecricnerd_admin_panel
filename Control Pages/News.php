@@ -1,8 +1,7 @@
 <?php
 session_start(); // Start the session at the very beginning
 ob_start(); // Start output buffering
-// $base_url = $_SERVER['DOCUMENT_ROOT'] . "/";
-$base_url = $_SERVER['DOCUMENT_ROOT'] . "/The Cricket Nerd Admin/";
+$base_url = $_SERVER['DOCUMENT_ROOT'] . "/";
 include $base_url . 'Assets/Components/Navbar.php';
 include $base_url . 'Assets/PHP/API/Config/Config.php';
 
@@ -215,9 +214,11 @@ $result = $conn->query($query);
                 <div class="news-item">
                     <img src="Media/Images/<?php echo htmlspecialchars($row['Thumbnail']); ?>" alt="<?php echo htmlspecialchars($row['Title']); ?>">
                     <h2><?php echo htmlspecialchars(mb_strimwidth($row['Title'], 0, 30, "...")); ?></h2>
-                    <p><?php echo htmlspecialchars(mb_strimwidth($row['Description'], 0, 30, "...")); ?></p>
+                    
+                    <p><?php echo htmlspecialchars(mb_strimwidth(strip_tags($row['Description']), 0, 30, "...")); ?></p>
+
                     <div class="actions">
-                        <a href="<?php echo htmlspecialchars($row['Slug Url']); ?>" target="_blank">Read More</a>
+                        <a href="Control Pages/Edit News.php?NewsID=<?php echo $row['ID']; ?>" target="_blank">Edit News</a>
                         <form action="" method="POST" onsubmit="confirmDeletion(event)">
                             <input type="hidden" name="delete_id" value="<?php echo htmlspecialchars($row['ID']); ?>">
                             <button type="submit">Delete News</button>

@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
         }
     }
     if (isset($_GET['LatestNews'])) {
-        $categories = ['Nepal Premier League', 'Nepal National', 'Nepal Domestic', 'Editorial'];
+        $categories = ['Elite Cup (Jay Trophy)','Nepal National', 'Nepal Domestic', 'Nepal Premier League', 'Editorial'];
         $newsData = [];
     
         foreach ($categories as $category) {

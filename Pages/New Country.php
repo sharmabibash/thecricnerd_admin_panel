@@ -1,6 +1,5 @@
 <?php
-// $base_url = $_SERVER['DOCUMENT_ROOT'] . "/";
-$base_url = $_SERVER['DOCUMENT_ROOT'] . "/The Cricket Nerd Admin/";
+$base_url = $_SERVER['DOCUMENT_ROOT'] . "/";
 include $base_url . 'Assets/Components/Navbar.php';
 ?>
 <!DOCTYPE html>
